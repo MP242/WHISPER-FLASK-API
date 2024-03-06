@@ -1,7 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -63,7 +61,7 @@ This project was developed using several key technologies in the fields of artif
 
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 * [Docker](https://docs.docker.com/)
-* [Whisper](hhttps://github.com/openai/whisper?tab=readme-ov-file)
+* [Whisper](hhttps://github.com/openai/whisper/)
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 
