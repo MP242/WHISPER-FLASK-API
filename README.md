@@ -61,7 +61,7 @@ This project was developed using several key technologies in the fields of artif
 
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 * [Docker](https://docs.docker.com/)
-* [Whisper](hhttps://github.com/openai/whisper/)
+* [Whisper](https://github.com/openai/whisper/)
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 
@@ -104,33 +104,27 @@ This Flask API offers two primary routes for easy interaction:
 1. GET Request to the Root Path
 - Route: GET "/"
 - Action: Returns a simple Hello World message.
-<br>
-<br>
-    JavaScript Example:
-    ```sh
-    fetch('http://localhost:5000/')
+```sh
+fetch('http://localhost:5000/')
     .then(response => response.text())
     .then(data => console.log(data));
-    ```
+```
+Response :
+```sh
+"Hello World"
+```
 
-    JavaScript Response:
-    ```sh
-    "Hello World"
-    ```
-<br>
 
 2. POST Request for Speech-to-Text Conversion
 - Route: POST "/whisper"
 - Input: Form data with an audio file included under the key "file".
 - Action: Processes the provided audio file through the Whisper model to perform speech-to-text conversion.
-<br>
-    JavaScript Example:
-    javascript
-    ```sh
+
+```sh
     // Assuming you have a File object or Blob representing the audio file
     const audioFile = document.querySelector('input[type="file"]').files[0];
     const formData = new FormData();
-    formData.append("file", audioFile);
+    formData.append("file", audioFile, "audio.wav");
 
     fetch('http://localhost:5000/whisper', {
     method: "POST",
@@ -138,12 +132,14 @@ This Flask API offers two primary routes for easy interaction:
     })
     .then(response => response.json())
     .then(data => console.log(data.text));
-    ```
-    Expected Response:
+```
 
-    ```json
-    results:[{ "file":"audio.wav","transcript": "The transcribed text from your audio file." }]
-    ```
+Expected Response:
+
+```sh
+  results:[{ "filename":"audio.wav","transcript": "The transcribed text from your audio file." }]
+```
+
 These routes enable straightforward interaction with the speech-to-text capabilities provided by the Whisper model through your Flask API. The examples demonstrate how to make requests using JavaScript, facilitating integration into web applications.
 
 
